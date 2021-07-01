@@ -1,16 +1,18 @@
 const express = require('express')
-const customerRouter = require('./routes/x.router')
-
 const app = express()
+const customerRouter = require('../src/routes/x.router')
+const bp = require('body-parser')
+app.use(bp.urlencoded({ extended: true }))
+app.use(bp.json())
+
 
 app.get('/', (req, res) => {
   res.send('Estou aqui!!!')
 })
 
-app.use(express.json())
-app.use('/customers', customerRouter)
+app.use('/', customerRouter)
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8081
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)

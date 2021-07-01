@@ -3,9 +3,8 @@ const controller = require('../controllers/x.controller')
 
 const router = express.Router()
 
-router.get('/', controller.listAll)
-router.post('/', controller.create)
-router.put('/:id', controller.update)
-router.delete('/:id', controller.remove)
+router.post('/api/v1/bills', controller.create)
+router.get('/api/v1/bills', controller.listAll)
+router.delete('/api/v1/bills/:id', controller.remove)
 
 module.exports = router
