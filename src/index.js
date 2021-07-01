@@ -1,5 +1,6 @@
 const express = require('express')
 const customerRouter = require('./routes/x.router')
+
 const app = express()
 
 app.get('/', (req, res) => {
